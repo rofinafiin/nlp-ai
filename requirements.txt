@@ -1,0 +1,7 @@
+numpy
+pandas
+requests
+Sastrawi
+tensorflow
+keras
+keras_preprocessing
