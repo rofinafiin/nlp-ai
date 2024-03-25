@@ -112,14 +112,14 @@ tensorboard_callback = TensorBoard(logdir, histogram_freq=1)
 checkpoint = ModelCheckpoint(os.path.join(path, 'model-{epoch:02d}-{loss:.2f}.hdf5'),
                              monitor='loss',
                              verbose=1,
-                             save_best_only=True, mode='auto', period=100)
+                             save_best_only=True, mode='auto', period=150)
 
 model = Model([enc_inp, dec_inp], output)
 model.compile(optimizer=RMSprop(), loss='categorical_crossentropy', metrics=['accuracy'])
 model.summary()
 
 batch_size = 64
-epochs = 400
+epochs = 600
 model.fit([encoder_input_data_train, decoder_input_data_train],
           decoder_output_data_train,
           batch_size=batch_size,
